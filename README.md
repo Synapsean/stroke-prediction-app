@@ -11,18 +11,20 @@ This project demonstrates the transition from a raw dataset to a deployed machin
 
 **Key Features:**
 * **Model:** Random Forest Classifier (Scikit-Learn) optimized for recall.
-* **Interface:** Interactive Streamlit dashboard for real-time risk assessment.
 * **Data Handling:** Imputation of missing values (BMI) and categorical encoding.
+* **Interface:** Interactive Streamlit dashboard for real-time risk assessment.
+* **Deployment:** Docker Container
 
-### How to Run Locally
-1. Clone the repository:
+### How to Run (Docker)
+This app is containerised to avoid dependency conflicts. To run it locally:
+1. Clone:
    ```bash
    git clone [https://github.com/Synapsean/stroke-prediction-app.git](https://github.com/Synapsean/stroke-prediction-app.git)
-2. Install dependencies:
+2. Build:
    ```bash
-    pip install -r requirements.txt
-3. Run the app:
+    docker build -t stroke-app .
+3. Run:
    ```bash
-    streamlit run app.py
+    docker run -p 8501:8501 stroke-app
 
 *This tool is a prototype for educational purposes and portfolio demonstration. It is not intended for actual medical diagnosis.*
